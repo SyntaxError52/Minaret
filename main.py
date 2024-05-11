@@ -1,7 +1,6 @@
 import json
 from tkinter import filedialog
 from tkinter import *
-import os
 import subprocess as sub
 
 
