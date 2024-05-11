@@ -20,14 +20,22 @@ configData = json.loads(configContents)
 
 root = Tk()
 root.geometry('700x400')
-root.title('Minaret')
+root.title('Minaret v1.1')
 root.iconbitmap(r'icon.ico')
 
 codeArea = Text(root, width=700, height=400, font=(configData['font'], configData['fontSize']), bg=configData['bgColor'], fg=configData['fontColor'])
 codeArea.pack()
 
+##Functions
 def openFile(event=None):
-    location = filedialog.askopenfilename(title='Open...')
+    location = filedialog.askopenfilename(title='Open...', filetypes=[
+        ('Text', '*.txt'),
+        ('Python', '*.py'),
+        ('JavaScript', '*.js'),
+        ('HTML', '*.html'),
+        ('CSS', '*.css'),
+        ('Java', '*.java')
+    ])
     if location:
         file = open(location, 'r')
         codeArea.delete('1.0', END)
@@ -53,7 +61,7 @@ def runFile(event=None):
         openFile()
 
 def addSaveMarker(event=None):
-    root.title('Minaret *')
+    root.title('Minaret v1.1 *')
 
 try:
     file = open(saveData['openedFile'], 'r')
