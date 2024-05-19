@@ -33,7 +33,8 @@ def openFile(event=None):
         ('JavaScript', '*.js'),
         ('HTML', '*.html'),
         ('CSS', '*.css'),
-        ('Java', '*.java')
+        ('Java', '*.java'),
+        ('All Files', '*.*')
     ])
     if location:
         file = open(location, 'r')
